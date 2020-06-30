@@ -3,12 +3,20 @@ function PlayQuestionGame() {
 		this.desc = desc;
 		this.ans = ansArray;
 		this.correct = correctNum;
-		this.printOut = function() {
-			console.log(this.desc);
-			for (var i = 0; i < ansArray.length; i++) {
-				console.log(this.ans[i]);
-			}
-		};
+		// this.printOut = function() {
+		// 	console.log(this.desc);
+		// 	for (var i = 0; i < ansArray.length; i++) {
+		// 		console.log(this.ans[i]);
+		// 	}
+		// };
+	};
+
+	// use prototype
+	Question.prototype.printOut = function() {
+		console.log(this.desc);
+		for (var i = 0; i < this.ans.length; i++) {
+			console.log(this.ans[i]);
+		}
 	};
 
 	var q1 = new Question('Which month has 31 days?', [ '1. May', '2. Feb' ], 1);
